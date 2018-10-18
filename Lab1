@@ -1,8 +1,17 @@
 Lab 1: Ethical Software Engineering
 
 Fallbeispiel: Manipulationen
-We (Florian, Sao Chi, Johanna) chose the "Fallbeispiel: Manipulation". It is about an employee of the company "CompanyRate". This company programms a rating system for banking compynies. The employee listens secretly to a phone call of one colleague. Now he suspects him to work with the company "People’s Fruit Company" because on the next day he finds some new code in thier program. This code is good for the "People’s Fruit Company". The colleague wrote a lot of other code. The employee doesn't know if the colleague is really illegally interacting with the company and wrote the new code to hide the suspicious one. Weeks ago another colleague got fired because of something strange. The employee is in a dilemma right now.
+We (Florian, Sao Chi, Johanna) chose the "Fallbeispiel: Manipulation". It is about an employee of the company "CompanyRate". This company programms a rating system for banking companies. The employee listens secretly to a phone call of one colleague. Now he suspects him to work with the company "People’s Fruit Company" because on the next day he finds some new code in their program. This code is good for the "People’s Fruit Company". The colleague wrote a lot of other code. The employee doesn't know if the colleague is really illegally interacting with the company and wrote the new code to hide the suspicious one. Weeks ago, another colleague got fired because of something strange. The employee is in a dilemma right now.
 
-Our discussion was about the trust and the manipulation in this example. First of all the code always needs to get reviewed by colleagues....(weiß nicht, was hier noch hin soll).
-Next every employee had to subscribe a NDA. 
-Finally company
+
+Our discussion was about the trust and the manipulation in this example. We noticed, this project has a big impact on the economy, because investors from the banking sector, trusting it. If a company gets a higher ranking from the algorithm, its odds getting more investments will increase. Therefore, the interest of manipulating the algorithm towards one’s own advantage rises likewise.
+
+First of all, the algorithm of such an enormous importance always needs to get reviewed by someone else in our view. Since the project holder has business interests in hiding the algorithm, because it is (or seems to become) the main product for making their profit, at least internally of the company it is obligatory, that the code must be checked. Thus, it is absolutely all right, that all the changes were analysed, even if there was no suspicion at all. We also suggest that software with high influence for the lives of many people (in this case the potential to harm other people economically), shall be inspected by a governmental or independent institution, in order to reduce the possibilities of manipulation.
+
+
+Next every employee had to subscribe an NDA. 
+Finally, company...
+
+
+
+Time needed for this lab: xy hours. // F: wichtig, hatte ich im letzten Lab vergessen zu erwähnen und ich wurde gebeten, es beim nächsten Mal einzubauen ;-)
