@@ -1,0 +1,32 @@
+title Registering a new user
+
+participant User
+participant Domain
+participant Database
+
+User->Domain: sendPersonalData()
+
+note right of User: name, email, billing address, delivery address
+
+Domain -> Database: forwardPersonalData()
+
+Database -> Domain: confirmInsertion()
+Domain -> User: valdiationNotification()
+
+note right of User: User gets an email with a confirmation link
+
+User -> Domain: clicksOnLink()
+Domain -> Database: validatesAccount()
+Database -> Domain: confirmValidation()
+Domain -> User: successNotification()
+
+
+
+
+
+
+
+
+
+
+
