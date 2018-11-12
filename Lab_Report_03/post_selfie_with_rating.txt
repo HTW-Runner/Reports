@@ -1,0 +1,23 @@
+title Posting a Selfie along with the short rating
+
+participant User
+participant Domain
+participant Database
+
+note left of Database:if User has not rated a Hoagieyet
+Database -> Domain:sendVoucherNotification()
+Domain -> User: sendVoucherEmail()
+note left of Domain: Asks for selfie in turn for voucher with link
+User -> Domain:clicksLink()
+Domain -> User:forwardToSelfieSection()
+User -> Domain:clicksUploadSelfie()
+Domain -> User:showFileForm()
+User -> Domain:uploadSelfie() && rateHoagie()
+Domain -> User:showTermsOfCondition()
+User -> Domain:acceptTermsOfCondition()
+User -> Domain:confirmUpload()
+note left of Database:Database saves the image
+Domain -> Database:forwardImage()
+note left of Database:if image was saved successful
+Database -> Domain:generateCode()
+Domain -> User:showConfirmationAndCode()
