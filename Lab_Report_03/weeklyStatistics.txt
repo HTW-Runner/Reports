@@ -1,0 +1,27 @@
+title Last week statistics of the ordered ingredients
+
+participant Manager
+participant Domain
+participant Database
+
+
+Manager->Domain: login()
+
+Domain->Database: authentification()
+Database->Domain: confirmLogin()
+Domain->Manager: forwardToManagerInterface()
+
+Manager->Domain: askForStatistics()
+Domain->Manager: asksForStatisticValues()
+
+note left of Domain: The system asks for the beginning and ending date, \n as well as the different ingredients, which should be \n shown in the statistics, can be checked marked.
+
+Manager->Domain: sendStatisticValues()
+
+
+Domain->Database: forwardStatisticValues()
+Database->Domain: generatedStatistics()
+Domain->Manager: displayStatistics()
+Manager->Domain: downloadCSV()
+Domain->Manager: sendCSV()
+note right of Manager: Download starts
