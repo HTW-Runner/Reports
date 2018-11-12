@@ -1,0 +1,24 @@
+title Configuring and paying for a hoagie to be delivered to your office
+
+note over User: already looged into his interface
+User->Domain: chooseIngredients(* times)
+note right of User: 1 bread -  at most 2 main ingredients - vegetables -  at most 2 sauces -  size
+Domain->User: displayHoagie()
+User->Domain: chooseDelivery()
+note right of User: type in the address of the office
+Domain->User: ask for billing address
+User->Domain: typeBillingAddress()
+note right of User: if billing address is diferent from delivery address
+Domain->User: askForPaymentMethod()
+note left of Domain: paypal, debit, creditcard
+User->Domain: give payment method
+User->Domain: type in creditcard data
+note right of User: if credit card --> type in credite \nif paypal --> give paypal accout \nif debit card --> subscribe to direct debit mandate
+
+Domain->User: displayOrder()
+User->Domain: checkOrder()
+User->Domain: submitOrder()
+Domain->PaymentSystem: forwardData()
+PaymentSystem-> Domain: successInformation()
+Domain->User: mailInformation()
+note left of Domain:informtion about order with delivery time
