@@ -4,11 +4,14 @@ participant User
 participant Domain
 participant Database
 
-note left of Database:if User has not rated a Hoagieyet
-Database -> Domain:sendVoucherNotification()
-Domain -> User: sendVoucherEmail()
-note left of Domain: Asks for selfie in turn for voucher with link
+opt Voucher
+    note left of Database:if User is new && no Hoagie rating yet
+    Database -> Domain:sendVoucherNotification()
+    note left of Domain: Asks for selfie in turn for voucher with link
+    Domain -> User: sendVoucherEmail()
+end
 User -> Domain:clicksLink()
+note right of User:Any link that points to the Selfie section is meant
 Domain -> User:forwardToSelfieSection()
 User -> Domain:clicksUploadSelfie()
 Domain -> User:showFileForm()
@@ -16,8 +19,12 @@ User -> Domain:uploadSelfie() && rateHoagie()
 Domain -> User:showTermsOfCondition()
 User -> Domain:acceptTermsOfCondition()
 User -> Domain:confirmUpload()
-note left of Database:Database saves the image
 Domain -> Database:forwardImage()
-note left of Database:if image was saved successful
-Database -> Domain:generateCode()
-Domain -> User:showConfirmationAndCode()
+note left of Database:Database saves the image if image was saved successful
+Database -> Domain:confirmStorage()
+opt Voucher
+    Database -> Domain:generateCode()
+    Domain -> User:sendCode()
+end
+note left of Domain:Sends the user to the Selfie section
+Domain -> User:showConfirmation()
