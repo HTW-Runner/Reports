@@ -1,0 +1,34 @@
+digraph finite_state_machine {
+size = 15;
+Customer_Logged_In -> Customer_orders_Hoagie;
+Customer_orders_Hoagie -> Customer_Paid;
+Customer_orders_Hoagie -> Forward_Order_To_Cook;
+Forward_Order_To_Cook -> Cook_Prepares_Order;
+Cook_Prepares_Order -> Order_Is_Prepared;
+Order_Is_Prepared -> Forward_Order_To_Deliverer;
+Forward_Order_To_Deliverer -> Deliverer_Brings_Order_To_Customer;
+Deliverer_Brings_Order_To_Customer -> Order_Delivered;
+Order_Delivered -> Customer_Paid;
+Order_Delivered -> Customer_Takes_Pictures [color = RED];
+Customer_Takes_Pictures -> Customer_Posts_Pictures [color = RED];
+if_first_picture -> Voucher_To_Customer [color = RED]; 
+Deliverer_Brings_Order_To_Customer -> Order_Not_Delivered;
+
+Customer_Paid -> Message_DataBase [color = BLUE];
+Order_Is_Prepared -> Message_DataBase [color = BLUE];
+Forward_Order_To_Deliverer -> Message_DataBase [color = BLUE];
+Order_Not_Delivered -> Message_DataBase [color = BLUE];
+Order_Delivered -> Message_DataBase [color = BLUE];
+Customer_Posts_Pictures -> Message_DataBase [color = RED];
+Customer_Logged_In -> Message_DataBase [color = BLUE];
+Order_Supplies -> Message_DataBase [color = BLUE];
+
+Message_DataBase -> Order_Supplies;
+Message_DataBase -> Updated_IngredientStore;
+Message_DataBase -> Updated_CustomerStore;
+Message_DataBase -> Updated_OrderStore;
+Message_DataBase -> Updated_WorkerStore;
+Message_DataBase -> Forward_Order_To_Cook;
+Message_DataBase -> Forward_Order_To_Deliverer;
+Message_DataBase -> if_first_picture [color = RED];
+}

@@ -1,0 +1,34 @@
+digraph finite_state_machine {
+	size="6";
+Goat_Cabbage_Wolf_N -> Goat_B1;
+Goat_B1 -> Goat_O;
+Goat_Cabbage_Wolf_N -> Cabbage_Wolf_N;
+Cabbage_Wolf_N -> Cabbage_B;
+Cabbage_Wolf_N -> Wolf_N;
+Cabbage_B -> Goat_Cabbage_Farmer_O;
+Goat_O -> Goat_Cabbage_Farmer_O;
+Goat_Cabbage_Farmer_O -> Goat_B2;
+Goat_B2 -> Wolf_Goat_Farmer_N;
+Wolf_N -> Wolf_Goat_Farmer_N;
+Wolf_Goat_Farmer_N -> Wolf_B;
+Wolf_B -> Wolf_Cabbage_O;
+Wolf_Goat_Farmer_N -> Goat_N;
+Goat_N -> Goat_B3;
+Goat_B3 -> Goat_Cabbage_Wolf_O;
+Wolf_Cabbage_O -> Goat_Cabbage_Wolf_O;
+
+Goat_Cabbage_Wolf_N [color = GREEN];
+Wolf_Goat_Farmer_N [color = GREEN];
+Cabbage_Wolf_N [color = GREEN]; 
+Goat_N [color = GREEN];
+Wolf_N [color = GREEN];
+Goat_B2 [color = BLUE];
+Goat_B1 [color = BLUE];
+Goat_B3 [color = BLUE];
+Cabbage_B [color = BLUE];
+Wolf_B [color = BLUE];
+Goat_Cabbage_Wolf_O [color = RED];
+Wolf_Cabbage_O [color = RED];
+Goat_O [color = RED];
+Goat_Cabbage_Farmer_O [color = RED];
+}
