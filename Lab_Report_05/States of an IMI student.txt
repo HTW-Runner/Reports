@@ -6,9 +6,9 @@ digraph G {
 "More nervous" -> "Overwhelmed"
 "Euphoric" -> "Overwhelmed"
 "Not nervous anymore" -> "Overwhelmed"
-"Overwhelmed" -> "Thinking about strategies how to deal with everything better"
-"Thinking about strategies how to deal with everything better" -> "Making promises"
-"Thinking about strategies how to deal with everything better" -> "It was already too late"
+"Overwhelmed" -> "Thinking about strategies how to deal better with everything"
+"Thinking about strategies how to deal better with everything" -> "Making promises"
+"Thinking about strategies how to deal better with everything" -> "It was already too late"
 "It was already too late" -> "Throwing all promises"
 "Making promises" -> "No Sleep"
 "Making promises" -> "Throwing all promises"
@@ -28,12 +28,17 @@ digraph G {
 "Relax" -> "End of semester break"
 "End of semester break" -> "Devastated"
 "End of semester break" -> "Motivated"
+"End of semester break" -> "Gratuated"
 "End of semester break" -> "Bored"
 "Devastated" -> "New semester starts"
-"New semester starts" -> "Thinking about strategies how to deal with everything better"
-"Thinking about strategies how to deal with everything better"
+"New semester starts" -> "Thinking about strategies how to deal better with everything"
+"Thinking about strategies how to deal better with everything"
 "Motivated" -> "New semester starts"
 "Bored" -> "New semester starts"
+
+"Fail exam" -> "Quitting studies"
+"Pure chaos" -> "Quitting studies"
+"Not attending lectures" -> "Quitting studies"
 
 
 
