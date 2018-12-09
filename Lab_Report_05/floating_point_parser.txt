@@ -1,0 +1,37 @@
+digraph FloatingPoint {
+    "Input String" -> FirstCharacter;
+    FirstCharacter -> SIGN;
+    FirstCharacter -> NUMBER;
+    FirstCharacter -> FALSE;
+    SIGN -> "INTEGER?";
+    "INTEGER?" -> NUMBER;
+    "INTEGER?" -> FALSE;
+    NUMBER -> nextCharacter;
+    nextCharacter -> NUMBER;
+    nextCharacter -> DOT;
+    nextCharacter -> FALSE;
+    DOT -> "FRACTIONAL?";
+    DOT -> FALSE;
+    "FRACTIONAL?" -> FRACTIONAL_NUMBER;
+    "FRACTIONAL?" -> FALSE;
+    FRACTIONAL_NUMBER -> nextFractional;
+    nextFractional -> FRACTIONAL_NUMBER;
+    nextFractional -> LETTER_E;
+    nextFractional -> NO_CHARACTER_LEFT;
+    nextFractional -> FALSE;
+    LETTER_E -> "EXPONENT?";
+    "EXPONENT?" -> FALSE;
+    "EXPONENT?" -> EXPONENT_NUMBER;
+    nextExponent -> EXPONENT_NUMBER;
+    nextExponent -> FALSE;
+    nextExponent -> NO_CHARACTER_LEFT;
+    EXPONENT_NUMBER -> nextExponent;
+    NO_CHARACTER_LEFT -> TRUE;
+    
+    FirstCharacter [shape=rectangle];
+    "INTEGER?" [shape=rectangle];
+    nextCharacter [shape=rectangle];
+    "FRACTIONAL?" [shape=rectangle];
+    nextFractional [shape=rectangle];
+    nextExponent [shape=rectangle];
+}
