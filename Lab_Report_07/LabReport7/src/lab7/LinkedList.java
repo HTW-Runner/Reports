@@ -90,6 +90,12 @@ public class LinkedList<T> {
 		}
 		return deleted_objects;
 	}
+	
+	public void deleteAll() {
+		first = null;
+		last = null;
+		size = 0;
+	}
 
 	public String toString() {
 		String text = "This is your list: ";
