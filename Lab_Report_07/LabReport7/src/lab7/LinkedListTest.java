@@ -69,6 +69,13 @@ class LinkedListTest {
 	}
 	
 	@Test
+	void testDeleteAllAtOnce() {
+		setupWithContent();
+		list.deleteAll();
+		assert(list.isEmpty());
+	}
+	
+	@Test
 	void testReverseEmpty() {
 		setup();
 		list.reverse();
