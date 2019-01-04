@@ -49,7 +49,7 @@ public class LinkedList<T> {
 
 	// Returns the first node (by Johanna)
 	public T first() {
-		if (first == null) {
+		if (isEmpty()) {
 			System.out.println("You have no first node");
 		}
 		return first.data;
