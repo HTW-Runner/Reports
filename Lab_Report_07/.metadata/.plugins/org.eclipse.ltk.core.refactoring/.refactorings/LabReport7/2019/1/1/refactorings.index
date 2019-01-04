@@ -1,0 +1,9 @@
+1546622818267	Move type 'Node' to new file
+1546623678949	Rename field 'current'
+1546625167954	Rename field 'last'
+1546627930778	Rename field 'current'
+1546627966618	Rename local variable 'temp'
+1546628017079	Rename local variable 'current'
+1546628028908	Rename local variable 'current'
+1546628274450	Rename local variable 'n'
+1546628523533	Delete element

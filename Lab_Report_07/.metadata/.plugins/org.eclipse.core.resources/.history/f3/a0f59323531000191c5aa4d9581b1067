@@ -1,0 +1,25 @@
+package lab7;
+
+public class Node<T> {
+	private T data;
+	Node<T> next;
+	Node<T> prev;
+
+	public Node(T data, Node<T> next, Node<T> prev) {
+		this.data = data;
+		this.next = next;
+		this.prev = prev;
+	}
+
+	public Node(T data) {
+		this(data, null, null);
+	}
+
+	public T getValue() {
+		return data;
+	}
+
+	public void setValue(T data) {
+		this.data = data;
+	}
+}

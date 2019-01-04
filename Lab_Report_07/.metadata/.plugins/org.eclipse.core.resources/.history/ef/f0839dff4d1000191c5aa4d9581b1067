@@ -1,0 +1,98 @@
+package lab7;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class LinkedListTest {
+	LinkedList<Integer> list;
+	
+	private void setup() {
+		list = new LinkedList<>();
+		assert(list.isEmpty());
+	}
+	
+	private void setupWithContent() {
+		setup();
+		list.push(1);
+		list.push(2);
+		list.push(3);
+		list.push(4);
+		list.push(5);
+	}
+	
+	private <T> void assertLists(LinkedList<T> list1, LinkedList<T> list2) {
+		assertEquals(list1.size(), list2.size());
+		assertEquals(list1.toString(), list2.toString());
+	}
+
+	@Test
+	void testDeleteEmpty() {
+		setup();
+		assertEquals(list.delete(3), false);
+		assert(list.isEmpty());
+	}
+	
+	@Test
+	void testDeleteOneItem() {
+		setup();
+		list.push(1);
+		assert(list.delete(1));
+		assert(list.isEmpty());
+	}
+	
+	@Test
+	void testDeleteSomeItems() {
+		setupWithContent();
+		assert(list.delete(1));
+		assert(list.delete(3));
+		
+		LinkedList<Integer> expected = new LinkedList<>();
+		expected.push(2);
+		expected.push(4);
+		expected.push(5);
+		assertLists(list, expected);
+//	}
+	
+//	@Test
+//	void testDeleteAllItems() {
+//		setupWithContent();
+//		assert(list.delete(1));
+//		assert(list.delete(2));
+//		assert(list.delete(3));
+//		assert(list.delete(4));
+//		assert(list.delete(5));
+//
+//		assert(list.isEmpty());
+//	}
+	
+	@Test
+	void testReverseEmpty() {
+		setup();
+		list.reverse();
+		assert(list.isEmpty());
+	}
+	
+	@Test
+	void testReverseOneItem() {
+		setup();
+		list.push(1);
+		list.reverse();
+		LinkedList<Integer> expected = new LinkedList<>();
+		expected.push(1);
+		assertLists(list, expected);
+	}
+	
+	@Test
+	void testReverseManyItems() {
+		setupWithContent();
+		list.reverse();
+		LinkedList<Integer> expected = new LinkedList<>();
+		expected.push(5);
+		expected.push(4);
+		expected.push(3);
+		expected.push(2);
+		expected.push(1);
+		assertLists(list, expected);
+	}
+}
