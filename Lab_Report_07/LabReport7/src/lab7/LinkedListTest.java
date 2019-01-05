@@ -109,12 +109,12 @@ class LinkedListTest {
 	void negativTestReverseManyItems() {
 		setupWithContent();
 		list.reverse();
-		LinkedList<Integer> expected = new LinkedList<>();
-		expected.push(1);
-		expected.push(2);
-		expected.push(3);
-		expected.push(4);
-		expected.push(5);
-		assert(!list.toString().equals(expected.toString()));
+		LinkedList<Integer> list2 = new LinkedList<>();
+		list2.push(1);
+		list2.push(2);
+		list2.push(3);
+		list2.push(4);
+		list2.push(5);
+		assert(!list.toString().equals(list2.toString()));
 	}
 }
